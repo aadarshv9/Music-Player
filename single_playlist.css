@@ -4,6 +4,17 @@ body{
 	background-color: #010c2b;
 }
 
+i:hover {
+	color: #29dbff;
+}
+
+a:hover{
+	color: #29dbff;
+}
+
+a{
+	transition: all 1s ease-in-out;
+}
 
 /*header section*/
 
@@ -16,25 +27,16 @@ header{
 }
 
 header img{
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	border-radius: 70%;
+	box-shadow: 0.5px 0.5px 4px 1px white;
 }
 
 .left-side, .right-side{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.logo-content h3{
-	margin-top: 0;
-	margin-bottom: 0;
-	display: inline-block;
-}
-
-.logo-content{
-	display: inline-block;
 }
 
 .search-bar{
@@ -58,11 +60,17 @@ header img{
 .search-bar form input{
 	flex-grow: 1;
 	width: 100%;
+	outline: none;
 	color: white;
+
 }
 
 .right-side .user-image{
 	margin-left: 2rem;
+}
+
+#hamburger{
+	display: none;
 }
 
 .hamburger{
@@ -74,13 +82,22 @@ header img{
 	display: none;
 	padding: 1rem;
 	position: absolute;
-	background-color: grey;
+	background-color: #004666;
 	bottom: -6rem;
 	right: 0;
 	z-index: 2;
 }
 
-#hamburger-content:target{
+#hamburger-content ul li a{
+	transition: all 0.5s ease-in-out;
+}
+
+#hamburger-content ul li a:hover {
+	text-decoration: underline;
+	color: grey;
+}
+
+#hamburger:checked + label + div{
 	display: block;
 }
 
@@ -107,7 +124,7 @@ header img{
 		display: none;
 	}
 
-	.left-side>a{
+	.left-side>.favourites{
 		display: none;
 	}
 
@@ -176,15 +193,17 @@ main{
 }
 
 .playlist-cover img{
-	width: 250px;
+	width: 298px;
 	height: 300px;
+	flex-grow: 1;
 }
 
 .playlist-details{
-	width: 70%;
+	width: 65%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	flex-grow: 1;
 }
 
 .playlist-title{
@@ -204,6 +223,12 @@ main{
 	margin-top: 2rem;
 }
 
+
+.play-all button:hover{
+	box-shadow: 1px 1px 3px 1px white;
+	cursor: pointer;
+}
+
 .play-button{
 	width: 60%;
 	display: flex;
@@ -218,11 +243,7 @@ main{
 	background-image: linear-gradient(to right, #0691d1, #c805eb);
 }
 
-@media only screen and (max-width: 1235px){
-
-	.playlist-cover img{
-		width: 100%;
-	}
+@media only screen and (max-width: 1250px){
 
 	.playlist-details{
 		width: 100%;
@@ -332,6 +353,11 @@ aside{
 	margin-bottom: 0.8rem;
 }
 
+.release-item:hover {
+	box-shadow: 0.5px 0.5px 5px 1.5px #29dbff;
+	background-color: #172b4a;
+}
+
 .leftSide-item{
 	display: flex;
 	align-items: center;
@@ -340,10 +366,11 @@ aside{
 .leftSide-item img{
 	height: 60px;
 	width: 60px;
+	box-shadow: 0.5px 0.5px 4px 1px white;
 }
 
 
-/*recently palyed section*/
+/*recently played section*/
 
 .queue-header{
 	display: flex;
@@ -352,13 +379,21 @@ aside{
 	position: relative;
 }
 
-.queue-header a{
-	align-self: flex-end;
-	border: none;
-	background-color: transparent;
+.queue-header input{
+	display: none;
 }
 
-#recently-played,#similar-artists{
+.queue-header label{
+	align-self: flex-end;
+	transition: all 0.5s ease;
+}
+
+.queue-header label:hover {
+	color: #29dbff;
+	cursor: pointer;
+}
+
+.queue-header div{
 	display: none;
 	position: absolute;
 	bottom: -4.8rem;
@@ -369,11 +404,7 @@ aside{
 	box-sizing: border-box;
 }
 
-#similar-artists:target{
-	display: block;
-}
-
-#recently-played:target{
+.queue-header input:checked + label + div{
 	display: block;
 }
 
@@ -385,6 +416,11 @@ aside{
 	display: inline;
 }
 
+#queue-list .queue-item:hover {
+	box-shadow: 0.5px 0.5px 5px 1.5px #29dbff;
+	background-color: #172b4a;
+}
+
 .queue-item{
 	display: flex;
 	justify-content: space-between;
@@ -393,8 +429,9 @@ aside{
 }
 
 .queue-item img{
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
+	box-shadow: 0.5px 0.5px 4px 1px white;
 }
 
 .left{
@@ -417,6 +454,7 @@ footer{
 	padding-left: 3rem;
 	padding-right: 3rem;
 	box-sizing: border-box;
+	z-index: 2;
 }
 
 .music-playing{
@@ -617,6 +655,12 @@ footer{
 	color: #02a3d4;
 }
 
+/*font properties*/
+
+.fontSize1pt8rem{
+	font-size: 1.8rem;
+	font-weight: 900;
+}
 
 /*general classes*/
 
