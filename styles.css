@@ -311,10 +311,30 @@ main{
 	align-items: center;
 }
 
+.leftSide-item a{
+	position: relative;
+}
+
+.leftSide-item a i{
+	display: none;
+	position: absolute;
+	left: 40%;
+	top: 35%;
+}
+
+.leftSide-item a:hover i{
+	display: block;
+	color: white;
+}
+
 .leftSide-item img{
 	height: 60px;
 	width: 60px;
 	box-shadow: 0.5px 0.5px 4px 1px white;
+}
+
+.leftSide-item a:hover img{
+	opacity: 0.5;
 }
 
 .rightSide-item input{
@@ -437,9 +457,25 @@ main{
 	transition: all 0.5s ease;
 }
 
+.station-type i{
+	display: none;
+	position: absolute;
+	transition: all 1s ease-in-out;
+}
+
+.station-type:hover i{
+	display: block;
+	color: white;
+}
+
+.station-type:hover h6{
+	display: none;
+}
+
 .stations .station-type:hover{
 	box-shadow: 0.5px 0.5px 5px 1px #29dbff;
 	background-color: #172b4a;
+	opacity: 0.5;
 }
 
 /*mood section*/
@@ -554,7 +590,7 @@ aside{
 	width: 10rem;
 	padding: 0.5rem;
 	box-sizing: border-box;
-	transition: all 2s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 #queue-dropdown a:hover{
